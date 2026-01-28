@@ -2,7 +2,7 @@
 
 echo "Scanning system for mouse devices..."
 
-MOUSE_EVENT_ID=$(grep -i -A 4 -E "Name=.*(mouse|touchpad)" /proc/bus/input/devices | grep -o "event[0-9]\+" | head -n 1)
+MOUSE_EVENT_ID=$(grep -i -A 4 "Name=.*Touchpad" /proc/bus/input/devices | grep -o "event[0-9]\+" | head -n 1)
 
 if [ -z "$MOUSE_EVENT_ID" ]; then
     echo "ERROR: No mouse or touchpad found automatically."
