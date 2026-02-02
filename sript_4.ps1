@@ -18,7 +18,7 @@ Write-Host "Press 'Ctrl+C' to stop."
 Write-Host "Waiting for clicks..."
 
 $Counter = 0
-$LeftMousButton = 0x01
+$LeftMouseButton = 0x01
 
 while ($true) {
 	$isPressed = $API::GetAsyncKeyState($LeftMouseButton) -band 0x8000
@@ -30,6 +30,6 @@ while ($true) {
 		}
 	}
 	
-	Start-Sleep -Milliseconds $SleepInterval
+	Start-Sleep -Milliseconds $SleepTime
 }
 
